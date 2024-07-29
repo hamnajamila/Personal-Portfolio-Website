@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #e62e5d;
+            color: #fff;
+        }
+
+        #introduction {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 0;
+            background-color: #000;
+        }
+
+        #introduction .intro-text {
+            max-width: 600px;
+        }
+
+        #introduction h2 {
+            font-size: 2.5rem;
+            color: #ff3366;
+        }
+
+        #introduction p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        #introduction .social-links {
+            margin: 20px 0;
+        }
+
+        #introduction .social-links a {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        #introduction .social-links a:hover {
+            color: #e62e5d;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 50px 0;
+            background-color: #111;
+            text-align: center;
+        }
+
+        #skills h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #skills ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        #skills ul li {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        #skills ul li:hover {
+            transform: scale(1.05);
+            background-color: #e62e5d;
+            color: #fff;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 50px 0;
+            background-color: #111;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #projects .project {
+            background-color: #222;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            text-align: center;
+        }
+
+        #projects .project:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #projects .project h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        #projects .project p {
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        #projects .project a {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #e62e5d;
+            border-radius: 5px;
+            color: #e62e5d;
+            font-weight: bold;
+            background-color: transparent;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        #projects .project a:hover {
+            background-color: #e62e5d;
+            color: #fff;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 0;
+            background-color: #111;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #contact p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #contact ul li {
+            margin-bottom: 10px;
+        }
+
+        #contact ul li a {
+            color: #e62e5d;
+            transition: color 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #contact ul li a:hover {
+            color: #fff;
+            background-color: #e62e5d;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #introduction {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #introduction .profile-pic {
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            #projects .project {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Hamna Jamila</h1>
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="introduction">
+        <div class="container">
+            <div class="intro-text">
+                <h2>Hi, I'm Hamna Jamila, a Data Science Enthusiast!</h2>
+                <p>Highly motivated computer science student seeking a role in Data Science. I am excited to contribute my skills and knowledge to
+                    any team or organization that values innovation and pushes the boundaries of Data Science and Data Analytics. I am eager to apply
+                    my skills to real-world challenges and drive technological advancements in the field.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hamna-jamila-58b478270/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/hamnajamila"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Best Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Data Science</li>
+                <li>C++</li>
+                <li>HTML & CSS</li>
+                <li>SQL</li>
+                <li>Django</li>
+                <li>Python Pandas</li>
+                <li>Matplotlib</li>
+                <li>Numpy</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>One More Chapter - Book Lover's Community</h3>
+                <p>OneMoreChapter is a web application designed for book enthusiasts to explore and discover new books, manage their shelves, and
+                    connect with other readers. Through a Django framework, the project hosts multiple apps offering functionalities such as user
+                    authentication, book browsing, personalized recommendations, interactive user profiles, and social features such as post feeds and
+                    user comments.
+                </p>
+                <a href="https://github.com/zoya-hammad/onemorechapter">View Project</a>
+            </div>
+
+            <div class="project">
+                <h3>Money Splitter Using C++</h3>
+                <p>The Money Splitter project, developed in C++, efficiently manages group expenses by dividing costs among participants. Utilizing
+                    advanced data structures like linked lists, queues, stacks, and trees, the program tracks individual contributions, calculates each
+                    person's share, and determines the amount owed or to be refunded. This ensures a fair and transparent allocation of expenses,
+                    simplifying financial management for group activities.
+                </p>
+                <a href="https://github.com/hamnajamila/MoneySplitter-Program">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+
+            <ul>
+<li><a href="hamnajameela@gmail.com">Email</a></li>
+
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hamna Jamila. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
